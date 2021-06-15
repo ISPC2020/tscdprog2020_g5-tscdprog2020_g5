@@ -61,25 +61,23 @@ class Home_Banking:
     def depositar(self):
         monto = int(input("Ingrese el monto a depositar: "))
         #acumula los montos depositados por el cliente
-        self.monto_cuenta += monto
-    
+        self.fondo_cuenta += monto
 
     #Método extraer, controlamos que la extracción sea menor al saldo de la cuenta
     def extraer(self):
         importe = int(input("Ingrese el importe a extraer $"))
-        #el monto a extraer debe ser menor al saldo xq no puede quedar la cuenta en $0
-        while importe >= self.cantidad:
-            print("Debe ingresar un monto menor a $",self.cantidad)
+        #el importe a extraer debe ser menor al saldo xq no puede quedar la cuenta en $0
+        while importe >= self.fondo_cuenta:
+            print("Debe ingresar un monto menor a $",self.fondo_cuenta)
             importe = int(input("Ingrese el nuevo importe a extraer $"))
         #ingresado el monto correcto, se descuenta del saldo de la cuenta del cliente
-        self.cantidad -= importe
+        self.fondo_cuenta -= importe
         print("****Retire su dinero****")
-        #se actualiza el diccionario
-        self.datos_clientes[self.dni] = [self.nombre, self.cantidad]
+
         
     #Método mostrar Total
     def imprimirTotal(self):
-        total = self.cantidad
+        total = self.fondo_cuenta
         print("Su saldo actual es de $", total)
         
         
