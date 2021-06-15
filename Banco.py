@@ -40,7 +40,6 @@ class Clientes(Agenda):
     #Contructor de la clase Clientes
     def __init__(self):
         #Cómo creamos el número de cuenta?
-        self.numero_de_cuenta = 0
         self.nombre = input("Nombre: ")
         self.dni = int(input("DNI: "))
         self.telfono = input("Número de teléfono: ")
@@ -53,8 +52,8 @@ class Clientes(Agenda):
     
 #Clase home banking para las operaciones del cliente
 class Home_Banking:
-    def __init__(self, numero_de_cuenta):
-        self.numero_de_cuenta = numero_de_cuenta
+    def __init__(self, dni):
+        self.numero_de_cuenta = dni
         self.fondo_cuenta = 0
         
     #Método depositar
